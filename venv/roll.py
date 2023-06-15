@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
     file_name = uploaded_file
 else:
-    file_name = "DatabaseSample.xlsx"
+    file_name = "data2.csv"
 with col3 :
     for index , row in df[:2].iterrows():
         st.header(row["title"])

@@ -4,7 +4,12 @@ st.set_page_config(layout="wide")
 
 df=pd.read_csv("data2.csv",sep=",")
 col1 , col2 , col3=st.columns([25,25,25])
-
+uploaded_file = st.file_uploader(
+    "Choose your database", accept_multiple_files=False)
+if uploaded_file is not None:
+    file_name = uploaded_file
+else:
+    file_name = "DatabaseSample.xlsx"
 with col3 :
     for index , row in df[:2].iterrows():
         st.header(row["title"])
